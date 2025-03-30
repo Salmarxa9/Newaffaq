@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>المقابلات - آفاق جديدة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0066cc;
+      --secondary: #f5f7fa;
+      --dark: #1e1e1e;
+      --accent: #00bfa6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background-color: var(--secondary);
+      color: var(--dark);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+        padding: 1rem 2rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .page-header {
+      background-color: #e3f1ff;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-bottom: 4px solid var(--primary);
+    }
+
+    .page-header h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .interview-section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .interview-card {
+      display: flex;
+      flex-direction: row;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .interview-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .interview-card img {
+      width: 40%;
+      object-fit: cover;
+    }
+
+    .interview-card .info {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .interview-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .interview-card p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .interview-card {
+        flex-direction: column;
+      }
+
+      .interview-card img {
+        width: 100%;
+        height: 220px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">آفاق جديدة</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-links" id="navLinks">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="Live_News.html">الأخبار</a></li>
+        <li><a href="Interviews.html">المقابلات</a></li>
+        <li><a href="Reports.html">التقارير</a></li>
+        <li><a href="Contact_Us.html">تواصل معنا</a></li>
+        <li><a href="About_Us.html">من نحن</a></li>
+        <li><a href="Narrative_Stories.html">القصص السردية </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <h2>المقابلات</h2>
+    <p>لقاءات حصرية مع المشاركين والمتحدثين في مؤتمر الإعلام الدولي الثالث</p>
+  </section>
+
+  <section class="interview-section" id="interviewContainer">
+    <!-- سيتم إدراج البطاقات عبر JavaScript -->
+  </section>
+
+  <footer>
+    &copy; 2025 جميع الحقوق محفوظة - آفاق جديدة
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    const interviews = [
+      {
+        title: "د. فاطمة الحربي: الإعلام الرقمي يغير قواعد اللعبة",
+        desc: "تحدثت د. فاطمة عن أهمية دمج تقنيات الذكاء الاصطناعي في العمل الصحفي اليومي.",
+        img: "interview1.jpg"
+      },
+      {
+        title: "مداخلة من طالب إعلام: التجربة رائعة",
+        desc: "شاركنا الطالب سعود الغامدي رأيه حول مشاركته في التغطية الإعلامية للمؤتمر.",
+        img: "interview2.jpg"
+      },
+      {
+        title: "ضيف دولي: الإعلام العربي في تطور ملحوظ",
+        desc: "أشاد أحد الضيوف الدوليين بتقدم الإعلام العربي في المجال الرقمي.",
+        img: "interview3.jpg"
+      }
+    ];
+
+    const container = document.getElementById("interviewContainer");
+
+    interviews.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "interview-card";
+      card.innerHTML = `
+  
+        <div class="info">
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>

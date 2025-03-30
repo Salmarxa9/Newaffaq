@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>القصص السردية - آفاق جديدة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0066cc;
+      --secondary: #f5f7fa;
+      --dark: #1e1e1e;
+      --accent: #00bfa6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background-color: var(--secondary);
+      color: var(--dark);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--primary);
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+        padding: 1rem 2rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .page-title {
+      background: linear-gradient(to left, #0055aa, #0077dd);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .page-title h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-title p {
+      font-size: 1.1rem;
+    }
+
+    .story-section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .story-card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .story-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .story-content {
+      padding: 1.5rem;
+    }
+
+    .story-content h3 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    .story-content p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #eee;
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">آفاق جديدة</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-links" id="navLinks">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="Live_News.html">الأخبار</a></li>
+        <li><a href="Interviews.html">المقابلات</a></li>
+        <li><a href="Reports.html">التقارير</a></li>
+        <li><a href="Contact_Us.html">تواصل معنا</a></li>
+        <li><a href="About_Us.html">من نحن</a></li>
+        <li><a href="Narrative_Stories.html">القصص السردية </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-title">
+    <h2>القصص السردية</h2>
+    <p>حكايات من كواليس المؤتمر وتاريخ الكلية الإعلامي</p>
+  </section>
+
+  <section class="story-section" id="storyContainer">
+    <!-- سيتم إدراج القصص تلقائيًا -->
+  </section>
+
+
+  <section style="background-color:#e9f4ff;padding:2rem;border-radius:12px;margin-bottom:2rem;">
+    <h3 style="color:#0066cc;margin-bottom:1rem;text-align:center;">رؤية منظم: وراء كل نجاح فريق</h3>
+    <p style="color:#333;text-align:center;font-size:1rem;line-height:1.8;max-width:700px;margin:auto;">
+      "أنا فهد من فريق التنظيم، عملنا بلا توقف طوال الأسابيع الماضية. أصعب اللحظات كانت ليلة ما قبل الافتتاح، لكنها كانت الأجمل عندما رأينا الجميع يصفقون فور بداية الحدث."
+    </p>
+  </section>
+
+  
+  <section style="background-color:white;padding:2rem;border:2px dashed #00bfa6;border-radius:12px;margin-bottom:2rem;">
+    <h3 style="color:#0066cc;margin-bottom:1rem;">شهادة حضور من الجمهور</h3>
+    <blockquote style="color:#444;font-size:1rem;line-height:1.8;">
+      "حضوري للمؤتمر جعلني أعيد التفكير في مستقبلي المهني، لم أتوقع هذا الكم من الإلهام والتنوع في المواضيع، شكرًا لكل من ساهم."
+    </blockquote>
+    <p style="text-align:left;font-style:italic;color:#777;margin-top:1rem;">— زائر من جامعة الإمارات</p>
+  </section>
+
+  
+  <section style="background-color:#fff;padding:2rem;text-align:center;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05);margin-bottom:2rem;">
+    <h3 style="color:#0066cc;margin-bottom:1rem;">شاركنا رأيك</h3>
+    <p style="margin-bottom:1rem;">هل أثّرت القصص السردية في رؤيتك للمؤتمر؟</p>
+    <a href="https://forms.google.com" target="_blank" style="display:inline-block;padding:0.7rem 1.5rem;background-color:#00bfa6;color:white;text-decoration:none;border-radius:8px;">شارك في الاستطلاع</a>
+  </section>
+
+  
+
+
+  <footer>
+    &copy; 2025 جميع الحقوق محفوظة - آفاق جديدة
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    const stories = [
+      {
+        title: "من خلف الكواليس: تجهيزات ما قبل المؤتمر",
+        desc: "بدأت الاستعدادات منذ أسابيع، حيث عمل فريق الكلية ليلًا ونهارًا لتنسيق وترتيب كل التفاصيل الصغيرة لضمان نجاح المؤتمر.",
+        img: "story1.jpg"
+      },
+      {
+        title: "قصة طالبة إعلام شاركت لأول مرة",
+        desc: "آمنة العلي، طالبة في السنة الأخيرة، تشاركنا تجربتها الأولى في التغطية الإعلامية المباشرة، وتقول إنها لن تنساها طوال حياتها.",
+        img: "story2.jpg"
+      },
+      {
+        title: "ذكريات من المؤتمرات السابقة",
+        desc: "منذ أول مؤتمر نظّمته الكلية في عام 2017، وهذه الفعاليات أصبحت منصة مهمة للحوار الإعلامي وتبادل الخبرات بين الطلبة والمختصين.",
+        img: "story3.jpg"
+      }
+    ];
+
+    const container = document.getElementById("storyContainer");
+
+    stories.forEach(story => {
+      const card = document.createElement("div");
+      card.className = "story-card";
+      card.innerHTML = `
+      
+        <div class="story-content">
+          <h3>${story.title}</h3>
+          <p>${story.desc}</p>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
